@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes js</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            constructor(nome){
+                this.nome = nome;
+            }
+            PrintarNome(){
+                return this.nome;
+            }
+        }
+
+        class Cachorro extends Animal{
+            constructor(nome){
+                super(nome);
+                this.raca = "pitbull";
+            }
+    
+            printRaca(){
+                return this.raca;
+            }
+        }
+
+        cachorro = new Cachorro("bob");
+
+        alert(cachorro.PrintarNome());
+    
+    </script>
+</body>
+</html>
