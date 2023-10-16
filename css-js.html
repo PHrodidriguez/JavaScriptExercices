@@ -1,0 +1,48 @@
+
+
+<html>
+    <body>
+       <!--   <div id="box"></div> -->
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+
+    </body>
+    <script>
+        /*Podemos manipular o css de um objeto com javascript:*/
+            var el = document.getElementById('box');
+            el.style.width = 100;
+            el.style.height = 100;
+            el.style.backgroundColor = 'red';
+            el.style.marginleft = 200;
+/*-----------------------------------------------------------------------------------------*/
+
+        var elements = document.getElementsByClassName('box');
+
+
+        elements[0] ;
+        var el = elements[0];
+        
+            el.style.width = 100;
+            el.style.height = 100;
+            el.style.backgroundColor = 'green';
+            el.style.marginLeft= 200;
+
+/*----------------------------------------------------------------------------------------------*/
+
+        for(var i = 0; i < elements.length; i++){
+            var el = elements[i];
+
+            el.style.width = 100;
+            el.style.height = 100;
+            el.style.backgroundColor = 'green';
+            el.style.marginLeft= 200;
+            el.style.marginTop = 10;
+            el.style.borderWidth = 1;
+            el.style.bordercolor = 'bue';
+            el.style.borderStyle = 'solid';
+
+        }
+    </script>
+</html>
