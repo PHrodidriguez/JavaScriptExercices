@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <title>Troca de cores</title>
+<style>
+    h1{
+        text-align: center;
+        font-size: 4rem;
+        font-family: 'Creepster', cursive;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <h1> Trocando as cores </h1>
+</body>
+<script>
+    let cores = ["blue", "yellow", "purple", "red", "green", "black","grey" ,"orange"]
+    document.body.style.backgroundColor = cores[1]
+    function trocarcores(){
+        document.body.style.backgroundColor = cores[Math.floor(8 * Math.random())]
+    }
+setInterval( trocarcores,1000);
+</script>
+</html>
