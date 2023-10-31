@@ -1,0 +1,71 @@
+<html>
+    <title>Movies</title>
+    <style>
+        .description{
+            display:none;
+        }
+        .titulofilme{
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div class="container">
+
+        </div>
+        <script> /*
+            var request = new XMLHttpRequest();
+            request.open('GET','https://jsonplaceholder.typicode.com/todos/1', true);
+
+            request.onload = function(){
+                if(this.status >= 200 && this.staus < 400){
+                    var data = JSON.parse(this.response);
+                    console.log(data);
+                }else{
+
+                }
+
+                request.onerror = function(){
+
+                }
+            }
+
+            request.send();
+            */
+
+            fetch('https://api.themoviedb.org/3/movie/popular?api_key=b0d1fea36d1188ba1ea9245fe28bd551',{
+                method:'GET'
+            })
+            .then(response => response.json())
+            .then(function(json){
+                var container = document.querySelector('.container');
+
+                //console.log(json);
+                json.results.map(function(val){
+                    container.innerHTML+=`
+                    <div class="titulofilme">`+val.title+` 
+                    <div class='description'> `+val.overview+`</div> <hr></div>`;
+                })
+
+
+                var titulos = document.querySelectorAll(".titulofilme");
+             for(var i = 0; i < titulos.length; i++){
+                titulos[i].addEventListener('click', function (t){
+                    if(t.target.querySelector('.description').style.display == 'none'){
+                        t.target.querySelector('.description').style.display = 'block'
+                    }else{
+                        t.target.querySelector('.description').style.display = 'none'
+                    }
+                
+                })
+             }
+
+
+            })
+
+    
+            
+            
+
+        </script>
+    </body>
+</html>
